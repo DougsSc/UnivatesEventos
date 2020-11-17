@@ -1,4 +1,4 @@
-# minicurso
+# UnivatesEventos
 
 A new Flutter application.
 
