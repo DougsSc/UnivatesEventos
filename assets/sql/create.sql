@@ -1,0 +1,1 @@
+CREATE TABLE cartao (id INTEGER PRIMARY KEY, numero TEXT, validade TEXT, codigoSeguranca TEXT, bandeira TEXT, debito INTEGER, status TEXT);
