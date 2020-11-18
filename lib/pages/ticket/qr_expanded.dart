@@ -1,11 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:minicurso/entitys/ticket.dart';
 import 'package:minicurso/widgets/label.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:screen/screen.dart';
-import 'package:minicurso/utils/session.dart' as session;
 
 class QrExpanded extends StatefulWidget {
   String qr;

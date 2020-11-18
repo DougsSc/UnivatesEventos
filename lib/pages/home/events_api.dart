@@ -9,7 +9,7 @@ class EventsApi {
   static Future<ApiResponse> list() async {
     print("POST => EventsApi.list()");
 
-    String url = 'http://mockbin.org/bin/cd51f59b-02c2-42df-a1ba-8a3d67739902';
+    String url = '${Api.URL}events';
 
     var jsonStr = '''[
       {

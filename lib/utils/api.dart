@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 class Api {
-  static const URL = 'https://ensino.univates.br/~douglas.schneider1/';
+  static const URL = 'http://ensino.univates.br/~douglas.schneider1/api/';
 }
 
 class ApiResponse<T> {

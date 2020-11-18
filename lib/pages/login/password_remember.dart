@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:minicurso/utils/alert.dart';
 import 'package:minicurso/utils/api.dart';
+import 'package:minicurso/utils/validator.dart';
 import 'package:minicurso/widgets/button.dart';
 import 'package:minicurso/widgets/text_field.dart';
 
@@ -23,7 +24,7 @@ class _PasswordRememberState extends State<PasswordRemember> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF0064B2),
+      backgroundColor: const Color(0xFF0064B2),
       appBar: AppBar(centerTitle: true, title: Text("Lembrar Senha")),
       body: _body(),
     );
@@ -115,8 +116,7 @@ class _PasswordRememberState extends State<PasswordRemember> {
   }
 
   String _validatorEmail(String value) {
-    var isValidEmail = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(value);
-    if (!isValidEmail) return "Email inválido";
+    if (!FieldValidator.isValidEmail(value)) return "Email inválido";
     return null;
   }
 }

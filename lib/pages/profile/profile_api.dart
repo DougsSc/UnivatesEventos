@@ -68,9 +68,9 @@ class ProfileApi {
       'token': session.user.token,
     };
 
-    if (name != null) map.addAll({'nome': name});
-    if (newEmail != null) map.addAll({'novoEmail': newEmail});
-    if (photo != null) map.addAll({'foto': base64Photo});
+    if (name != null) map.addAll({'name': name});
+    if (newEmail != null) map.addAll({'email': newEmail});
+    if (photo != null) map.addAll({'image': base64Photo});
 
     String body = json.encode(map);
 //    debugPrint('Body: $body');

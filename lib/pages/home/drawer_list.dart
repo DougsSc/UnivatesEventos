@@ -59,14 +59,6 @@ class DrawerList extends StatelessWidget {
     );
   }
 
-  _onClickAjuda(BuildContext context) {
-    Navigator.pop(context);
-  }
-
-  _onClickTermos(BuildContext context) {
-    Navigator.pop(context);
-  }
-
   _onClickInputCard(BuildContext context) {
     Navigator.pop(context);
     push(context, ListCards());

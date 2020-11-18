@@ -24,8 +24,7 @@ class DatabaseHelper {
     String path = join(databasesPath, 'minicurso.db');
     print("DB_path: $path");
 
-    var db = await openDatabase(path,
-        version: 1, onCreate: _onCreate, onUpgrade: _onUpgrade);
+    var db = await openDatabase(path, version: 1, onCreate: _onCreate, onUpgrade: _onUpgrade);
     return db;
   }
 
@@ -47,7 +46,7 @@ class DatabaseHelper {
     print("DB_onUpgrade: oldVersion: $oldVersion > newVersion: $newVersion");
 
     if (oldVersion == 1 && newVersion == 2) {
-//      await db.execute("alter table carro add column NOVA TEXT");
+      //String s = await rootBundle.loadString('assets/sql/update.sql');
     }
   }
 

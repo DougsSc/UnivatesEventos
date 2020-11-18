@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:minicurso/entitys/user.dart';
 import 'package:minicurso/utils/api.dart';
@@ -10,6 +9,7 @@ class LoginApi {
   static Future<ApiResponse> login(String login, String password) async {
     print("POST => LoginApi.login($login, $password)");
 
+    /*
     var json = '{ '
         '"id":1, '
         '"token":"${UniqueKey().toString()}", '
@@ -18,9 +18,7 @@ class LoginApi {
         '"cpf":"12345678909", '
         '"image":""'
     '}';
-    return ApiResponse.ok(User.fromJson(json));
-
-    /*
+    return ApiResponse.ok(User.fromJson(json)); */
 
     String url = '${Api.URL}login';
 
@@ -38,13 +36,12 @@ class LoginApi {
     } else {
       return ApiResponse.error(ApiError.fromJson(response.body));
     }
-     */
   }
 
   static Future<ApiResponse> rememberPassword(email) async {
     print("POST => LoginApi.rememberPassword($email)");
 
-    String url = '${Api.URL}/rememberPassword';
+    String url = '${Api.URL}password/remember';
 
     String body = json.encode({
       'email': email,
