@@ -11,7 +11,7 @@ class ProfileApi {
   static Future<ApiResponse> data() async {
     print("POST => data()");
 
-    String url = '${Api.URL}data';
+    String url = '${Api.URL}login';
 
     String body = json.encode({
       'email': session.user.email,
@@ -33,7 +33,7 @@ class ProfileApi {
       String password, String newPassword) async {
     print("POST => changePassword($password, $newPassword)");
 
-    String url = '${Api.URL}password/change';
+    String url = '${Api.URL}login';
 
     String body = json.encode({
       'email': session.user.email,
@@ -61,7 +61,7 @@ class ProfileApi {
       base64Photo = base64Encode(imageBytes);
     }
 
-    String url = '${Api.URL}profile';
+    String url = '${Api.URL}login';
 
     var map = {
       'email': session.user.email,
@@ -88,7 +88,7 @@ class ProfileApi {
   static Future<ApiResponse> logout() async {
     print("POST => ProfileApi.logout()");
 
-    String url = '${Api.URL}logout';
+    String url = '${Api.URL}login';
 
     String body = json.encode({
       'email': session.user.email,

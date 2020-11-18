@@ -7,12 +7,9 @@ import 'package:minicurso/utils/nav.dart';
 import 'package:minicurso/widgets/list_tile_menu.dart';
 
 class DrawerList extends StatelessWidget {
-  Function updateState;
-
-  DrawerList(this.updateState);
+  DrawerList();
 
   UserAccountsDrawerHeader _header() {
-    print('Session.user: ${session.user.email}');
     return UserAccountsDrawerHeader(
       accountName: Text(session.user.name),
       accountEmail: Text(session.user.email),
@@ -25,7 +22,7 @@ class DrawerList extends StatelessWidget {
     final drawerItems = [
       ListTileMenu(
         Icons.payment,
-        "Pagamento",
+        "Carteira digital",
         onTap: () => _onClickInputCard(context),
       ),
       ListTileMenu(

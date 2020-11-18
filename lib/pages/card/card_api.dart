@@ -9,7 +9,7 @@ class CardApi {
   static Future<ApiResponse> list() async {
     print("POST => CardApi.listCards()");
 
-    String url = '${Api.URL}list';
+    String url = '${Api.URL}cards';
 
     String body = json.encode({
       'email': session.user.email,
@@ -32,7 +32,7 @@ class CardApi {
   static Future<ApiResponse> add(CreditCard card) async {
     print("POST => CardApi.add()");
 
-    String url = '${Api.URL}card/add';
+    String url = '${Api.URL}cards';
 
     String body = json.encode({
       'email': session.user.email,
@@ -40,6 +40,7 @@ class CardApi {
       'cartao': card.toMap(),
     });
 
+    await Future.delayed(Duration(seconds: 2));
     print('Body: $body');
 
     http.Response response = await http.post(url, body: body);
@@ -56,7 +57,9 @@ class CardApi {
   static Future<ApiResponse> delete(CreditCard card) async {
     print("POST => CardApi.delete()");
 
-    String url = '${Api.URL}card/delete';
+    String url = '${Api.URL}cards';
+
+    await Future.delayed(Duration(seconds: 3));
 
     String body = json.encode({
       'email': session.user.email,

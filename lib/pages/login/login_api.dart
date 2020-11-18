@@ -41,7 +41,7 @@ class LoginApi {
   static Future<ApiResponse> rememberPassword(email) async {
     print("POST => LoginApi.rememberPassword($email)");
 
-    String url = '${Api.URL}password/remember';
+    String url = '${Api.URL}login';
 
     String body = json.encode({
       'email': email,

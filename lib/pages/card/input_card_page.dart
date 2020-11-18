@@ -228,7 +228,7 @@ class _InputCardState extends State<InputCard> {
 
       print(_paymentCard.toString());
       CreditCard card = _paymentCard.toCard();
-      card.debito = widget.isDebit ? 1 : 0;
+      card.debit = widget.isDebit ? 1 : 0;
 
       _cardRegister(card);
     }

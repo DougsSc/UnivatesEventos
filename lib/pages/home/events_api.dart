@@ -11,23 +11,6 @@ class EventsApi {
 
     String url = '${Api.URL}events';
 
-    var jsonStr = '''[
-      {
-        "id":1,
-        "title":"Mini-curso Flutter",
-        "description":"Um pouco de Flutter para as nossas vidas!",
-        "date":"2020-11-18 21:00:00",
-        "minister":"Douglas Schneider"
-      },
-      {
-        "id":2,
-        "title":"Flutter é Vida",
-        "description":"Um pouco de Flutter para as nossas vidas!",
-        "date":"2020-11-18 22:30:00",
-        "minister":"Dougs"
-      }
-    ]''';
-
     String body = json.encode({
       'email': session.user.email,
       'token': session.user.token,

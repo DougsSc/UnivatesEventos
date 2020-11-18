@@ -5,20 +5,20 @@ import '../entity.dart';
 
 class CreditCard extends Entity {
   int id;
-  String numero;
-  String validade;
-  int codigoSeguranca;
-  String bandeira;
-  int debito;
+  String number;
+  String validate;
+  int secureCode;
+  String flag;
+  int debit;
   String status;
 
   CreditCard({
     this.id,
-    this.numero,
-    this.validade,
-    this.codigoSeguranca,
-    this.bandeira,
-    this.debito,
+    this.number,
+    this.validate,
+    this.secureCode,
+    this.flag,
+    this.debit,
     this.status,
   });
 
@@ -28,7 +28,7 @@ class CreditCard extends Entity {
   static const VISA_ELECTRON = 'VISA_ELECTRON';
   static const DISCOVER = 'DISCOVER';
 
-  static const ENTITY = 'cartao';
+  static const ENTITY = 'card';
 
   factory CreditCard.fromSoap(String str) =>
       CreditCard.fromMap(json.decode(str)[ENTITY]);
@@ -39,27 +39,27 @@ class CreditCard extends Entity {
 
   CreditCard.fromMap(Map<String, dynamic> map) {
     id = convertToInt(map['id']);
-    numero = map['numero'];
-    validade = map['validade'];
-    codigoSeguranca = convertToInt(map['codigoSeguranca']);
-    bandeira = map['bandeira'];
-    debito = convertToInt(map['debito']);
+    number = map['number'];
+    validate = map['validate'];
+    secureCode = convertToInt(map['secureCode']);
+    flag = map['flag'];
+    debit = convertToInt(map['debit']);
     status = map['status'];
   }
 
   Map<String, dynamic> toMap() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id ?? 0;
-    data['numero'] = this.numero;
-    data['validade'] = this.validade;
-    data['codigoSeguranca'] = this.codigoSeguranca;
-    data['bandeira'] = this.bandeira;
-    data['debito'] = this.debito;
+    data['number'] = this.number;
+    data['validate'] = this.validate;
+    data['secureCode'] = this.secureCode;
+    data['flag'] = this.flag;
+    data['debit'] = this.debit;
     data['status'] = this.status ?? 'a';
     return data;
   }
 
   String numberCard() {
-    return numero.substring(numero.length - 4);
+    return number.substring(number.length - 4);
   }
 }

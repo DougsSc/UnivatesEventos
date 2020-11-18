@@ -26,10 +26,10 @@ class PaymentCard {
 
   CreditCard toCard() {
     return CreditCard(
-      numero: number,
-      validade: '$month/$year',
-      codigoSeguranca: cvv,
-      bandeira: type.toString().replaceAll('CardType.', ''),
+      number: number,
+      validate: '$month/$year',
+      secureCode: cvv,
+      flag: type.toString().replaceAll('CardType.', ''),
     );
   }
 }

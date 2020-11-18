@@ -23,6 +23,8 @@ abstract class BaseDAO<T extends Entity> {
 
     final list = await dbClient.rawQuery('SELECT * FROM $tableName');
 
+    // print('listCard: $list');
+
     return list.map<T>((json) => fromMap(json)).toList();
   }
 

@@ -8,6 +8,7 @@ class Event {
   String description;
   String date;
   String minister;
+  String token;
 
   Event({
     this.id,
@@ -15,6 +16,7 @@ class Event {
     this.description,
     this.date,
     this.minister,
+    this.token,
   });
 
   static final String element = 'user';
@@ -26,20 +28,20 @@ class Event {
 
   String toJson() => json.encode(toMap());
 
-  factory Event.fromMap(Map<String, dynamic> map) =>
-      Event(
+  factory Event.fromMap(Map<String, dynamic> map) => Event(
         id: convertToInt(map["id"]),
         title: map["title"],
         description: map["description"],
         date: map["date"],
         minister: map["minister"],
+        token: map["token"],
       );
 
-  Map<String, dynamic> toMap() =>
-      {
+  Map<String, dynamic> toMap() => {
         "title": title,
         "description": description,
         "date": date,
         "minister": minister,
+        "token": token,
       };
 }

@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
         centerTitle: true,
       ),
       body: _body(),
-      drawer: DrawerList(() => setState(() {})),
+      drawer: DrawerList(),
     );
   }
 
@@ -77,11 +77,6 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             children: <Widget>[
               Divider(),
               _bodyItem(event),
-//                Container(
-//                  height: 40,
-//                  margin: EdgeInsets.only(left: 4),
-//                  child: VerticalDivider(color: Colors.black),
-//                ),
             ],
           );
         },
@@ -93,7 +88,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
 
   _bodyItem(Event event) {
     return InkWell(
-      onTap: _onClickItem,
+      onTap: () => _onClickItem(event),
       child: Row(
         children: <Widget>[
           Container(
@@ -173,7 +168,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
     }
   }
 
-  void _onClickItem() {
-    push(context, QrExpanded('zOkhH9fq4jQp8xB7Y3i9uk2RIo8Pw9OI'));
+  void _onClickItem(Event event) {
+    push(context, QrExpanded(event.token));
   }
 }

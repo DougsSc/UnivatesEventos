@@ -1,1 +1,1 @@
-CREATE TABLE cartao (id INTEGER PRIMARY KEY, numero TEXT, validade TEXT, codigoSeguranca TEXT, bandeira TEXT, debito INTEGER, status TEXT);
+CREATE TABLE card (id INTEGER PRIMARY KEY, number TEXT, validate TEXT, secureCode TEXT, flag TEXT, debit INTEGER, status TEXT);

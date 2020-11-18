@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:minicurso/entitys/credit_card/credit_card.dart';
+import 'package:minicurso/entitys/credit_card/credit_card_dao.dart';
 import 'package:minicurso/pages/card/payment_card.dart';
 import 'package:minicurso/utils/alert.dart';
 import 'package:minicurso/utils/api.dart';
@@ -87,7 +88,7 @@ class _ListCardsState extends State<ListCards> {
           leading: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              CardUtils.getCardIcon(CardUtils.getCardType(card.bandeira)),
+              CardUtils.getCardIcon(CardUtils.getCardType(card.flag)),
             ],
           ),
           trailing: IconButton(
@@ -95,9 +96,9 @@ class _ListCardsState extends State<ListCards> {
             onPressed: () => _onClickDeleteCard(card),
           ),
 //          onTap: () => _onClickCardSelect(card),
-          title: Text('${card.numero}'),
+          title: Text('${card.number}'),
           subtitle: Text(
-            'Cartão de ${card.debito == 1 ? 'débito' : 'crédito'}',
+            'Cartão de ${card.debit == 1 ? 'débito' : 'crédito'}',
           ),
         ),
         Divider(),
@@ -157,8 +158,11 @@ class _ListCardsState extends State<ListCards> {
       if (response.ok) {
         List<CreditCard> cards = response.result;
 
-//        final dao = CartaoDAO();
-//        _cards.forEach(dao.save);
+       final dao = CardDAO();
+       cards.forEach(dao.save);
+       // cards.forEach((element) { dao.save(element); });
+
+        // List<CreditCard> cards = await dao.findAll();
 
         if (cards != null) _cardsController.add(cards);
       } else {
